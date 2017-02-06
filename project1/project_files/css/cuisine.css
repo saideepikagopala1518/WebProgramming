@@ -148,7 +148,7 @@ height:200px;
 width:400px;
 }
 .heading{
-
+text-align:center;
 font-style:italic;
 font-weight:bold;
 }
@@ -179,5 +179,8 @@ padding:30px;
 .contentwelcome a {
 	text-decoration: none;
 	color:red;
+}
+h4{
+font-style:italic;
 }
 
