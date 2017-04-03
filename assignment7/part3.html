@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>Part-3</title>
+<style>
+html{
+padding:1%;
+}
+h2{
+text-align:center;
+}
+body{
+background-color:lavender;
+}
+.main{
+		width:40%;
+		height:30%;
+		border-radius:30px;
+		border:1px groove black;
+		background-image: url("payroll.jpg");
+		background-repeat:no-repeat;
+		background-position:fixed;
+		background-size:cover;
+		padding:1%;
+		margin-left:auto;
+		margin-right:auto;
+		 }
+</style>
+<script>
+function loadList1() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+     document.getElementById("demo").innerHTML = xhttp.responseText;
+    }
+  };
+  xhttp.open("GET", "list1.txt", true);
+  xhttp.send();
+}
+function loadList2() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+     document.getElementById("demo").innerHTML = xhttp.responseText;
+    }
+  };
+  xhttp.open("GET", "list2.txt", true);
+  xhttp.send();
+}
+function loadList3() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+     document.getElementById("demo").innerHTML = xhttp.responseText;
+    }
+  };
+  xhttp.open("GET", "list3.txt", true);
+  xhttp.send();
+}
+    
+</script>
+</head>
+<body>
+<div class="main">
+<h2>Computer Science Courses<h2><hr/>
+ <h3>Click for More Information</h3>
+<ul class="informatinable">
+<li onclick="loadList1()">Web Programming</li>
+<li onclick="loadList2()">Machine Learning</li>
+<li onclick="loadList3()">Advanced Software Engineering</li>
+</ul>
+<br>
+<div id="demo"></div>
+</div>
+</body>
+</html>

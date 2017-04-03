@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>Part-2</title>
+      <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+      <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      <style>
+	  html{
+		padding:1%;
+		}
+		body{
+		font-family:Verdana;
+		background-color:lavender;
+		}
+        .draggable{ 
+            width: 50px; height: 15px; background:#eee;
+         }
+         .bin {
+		  position: absolute;
+        }
+		.main{
+		width:40%;
+		height:20%;
+		border-radius:30px;
+		border:1px groove black;
+		background-image: url("payroll.jpg");
+		background-repeat:no-repeat;
+		background-position:fixed;
+		background-size:cover;
+		padding:1%;
+		margin-left:auto;
+		margin-right:auto;
+		 }
+		 h3{
+		text-align:center;
+		}
+		#recycle{
+		margin-left:80%;
+		width:40px;
+		height:40px;
+		
+		}
+      </style>
+      <script>
+         $(function() {
+$(".removable li").draggable({
+					helper: "clone",
+					revert: "invalid"
+				});
+				$("#recycle").droppable({
+					drop: function(event, ui) {
+							if (confirm("Are you sure you want to delete '" + $(ui.draggable).text() + "'?")) {
+								$(ui.draggable).remove();
+							}
+						}
+				});
+
+         });
+      </script>
+   </head>
+   <body>
+   <div class="main">
+   <h3>Drag and Drop Menu</h3><hr/>
+   <div id="divDragAndDrop">
+			<ul class="removable">
+				List Of items:
+				<li>Web Programming</li>
+				<li>Advanced Software Engineering</li>
+				<li>Big Data Programming</li>
+				<li>Machine Learning</li>
+				<li>Advanced Computer Networks</li>
+				<li>Computer Vision</li>
+			</ul>
+			<img src="trash.png" id="recycle"/>
+		</div>
+
+	</div>
+     
+   </body>
+</html>
